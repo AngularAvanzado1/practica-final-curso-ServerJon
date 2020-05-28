@@ -11,9 +11,28 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot(
+      [
+        {
+          path: 'home',
+          loadChildren: () =>
+            import('./components/home/home.module').then((m) => m.HomeModule),
+        },
+        {
+          path: 'region:code',
+          loadChildren: () =>
+            import('./components/region/region.module').then((m) => m.RegionModule),
+        },
+        {
+          path: 'country:id',
+          loadChildren: () =>
+            import('./components/country/country.module').then((m) => m.CountryModule),
+        },
+      ],
+      { initialNavigation: 'enabled' }
+    ),
     UiModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
