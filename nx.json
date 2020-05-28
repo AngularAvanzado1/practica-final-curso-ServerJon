@@ -25,6 +25,12 @@
     "world-bank-e2e": {
       "tags": [],
       "implicitDependencies": ["world-bank"]
+    },
+    "shared-ui": {
+      "tags": []
+    },
+    "shared-data": {
+      "tags": []
     }
   }
 }

@@ -17,7 +17,7 @@
 .settings/
 *.sublime-workspace
 .editorconfig
-tsconfig.json
+.angulardoc.json
 
 # IDE - VSCode
 .vscode/*
