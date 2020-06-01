@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -22,12 +22,16 @@ import { MaterialModule } from './material.module';
         {
           path: 'region:code',
           loadChildren: () =>
-            import('./components/region/region.module').then((m) => m.RegionModule),
+            import('./components/region/region.module').then(
+              (m) => m.RegionModule
+            ),
         },
         {
           path: 'country:id',
           loadChildren: () =>
-            import('./components/country/country.module').then((m) => m.CountryModule),
+            import('./components/country/country.module').then(
+              (m) => m.CountryModule
+            ),
         },
       ],
       { initialNavigation: 'enabled' }
@@ -38,5 +42,6 @@ import { MaterialModule } from './material.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

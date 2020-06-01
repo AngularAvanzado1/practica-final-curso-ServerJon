@@ -17,9 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@p-final/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@practica-final-curso-server-jon/shared/data": [
-        "libs/shared/data/src/index.ts"
-      ]
+      "@p-final/shared/data": ["libs/shared/data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
