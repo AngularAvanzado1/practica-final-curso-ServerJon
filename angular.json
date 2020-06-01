@@ -86,10 +86,7 @@
               "apps/world-bank/tsconfig.app.json",
               "apps/world-bank/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/world-bank/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/world-bank/**"]
           }
         },
         "test": {
@@ -97,7 +94,8 @@
           "options": {
             "jestConfig": "apps/world-bank/jest.config.js",
             "tsConfig": "apps/world-bank/tsconfig.spec.json",
-            "setupFile": "apps/world-bank/src/test-setup.ts"
+            "setupFile": "apps/world-bank/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       }
@@ -123,13 +121,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/world-bank-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/world-bank-e2e/**"
-            ]
+            "tsConfig": ["apps/world-bank-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/world-bank-e2e/**"]
           }
         }
       }
@@ -147,10 +140,7 @@
               "libs/shared/ui/tsconfig.lib.json",
               "libs/shared/ui/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/ui/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/shared/ui/**"]
           }
         },
         "test": {
@@ -158,7 +148,8 @@
           "options": {
             "jestConfig": "libs/shared/ui/jest.config.js",
             "tsConfig": "libs/shared/ui/tsconfig.spec.json",
-            "setupFile": "libs/shared/ui/src/test-setup.ts"
+            "setupFile": "libs/shared/ui/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -181,10 +172,7 @@
               "libs/shared/data/tsconfig.lib.json",
               "libs/shared/data/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/data/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/shared/data/**"]
           }
         },
         "test": {
@@ -192,7 +180,8 @@
           "options": {
             "jestConfig": "libs/shared/data/jest.config.js",
             "tsConfig": "libs/shared/data/tsconfig.spec.json",
-            "setupFile": "libs/shared/data/src/test-setup.ts"
+            "setupFile": "libs/shared/data/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
