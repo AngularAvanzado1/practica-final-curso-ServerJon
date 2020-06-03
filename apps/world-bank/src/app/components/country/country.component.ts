@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'practica-final-curso-server-jon-country',
+  selector: 'p-final-country',
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.css']
 })

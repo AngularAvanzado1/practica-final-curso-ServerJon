@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'practica-final-curso-server-jon-region',
+  selector: 'p-final-region',
   templateUrl: './region.component.html',
   styleUrls: ['./region.component.css']
 })

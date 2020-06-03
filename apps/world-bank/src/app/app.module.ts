@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { UiModule } from '@p-final/shared/ui';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { MaterialModule } from './material.module';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { UiModule } from '@p-final/shared/ui';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -33,12 +33,14 @@ import { MaterialModule } from './material.module';
               (m) => m.CountryModule
             ),
         },
+        { path: '', redirectTo: '/home', pathMatch: 'full' },
       ],
       { initialNavigation: 'enabled' }
     ),
-    UiModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    UiModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
