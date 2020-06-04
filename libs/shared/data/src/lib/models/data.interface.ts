@@ -1,6 +1,11 @@
-export interface Information {
+export interface InformationRegionsList {
     informationPage:    Informationpage;
     arrayRegions:       Region[];
+}
+
+export interface InformationCountries {
+    informationPage:    Informationpage;
+    arrayCountries:     Country[];
 }
 
 export interface Informationpage {
@@ -19,17 +24,11 @@ export interface Region {
 
 export interface Country extends Region {
     
-    region:      Inforegion;
-    adminregion: Inforegion;
-    incomeLevel: Inforegion;
-    lendingType: Inforegion;
+    region:      Region;
+    adminregion: Region;
+    incomeLevel: Region;
+    lendingType: Region;
     capitalCity: string;
     longitude:   string;
     latitude:    string;
-}
-
-export interface Inforegion {
-    id:       string;
-    iso2code: string;
-    value:    string;
 }

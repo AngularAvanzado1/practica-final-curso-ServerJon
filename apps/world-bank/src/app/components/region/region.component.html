@@ -1,1 +1,3 @@
-<p>region works!</p>
+<section *ngIf="countries$ | async as countries">
+  <p-final-countries-list [countries]="countries" [region]="codeRegion"></p-final-countries-list>
+</section>

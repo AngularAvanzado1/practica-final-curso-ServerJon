@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 import { Region } from '@p-final/shared/data';
 
@@ -8,7 +8,8 @@ import {MatTableDataSource} from '@angular/material/table';
 @Component({
   selector: 'p-final-regions',
   templateUrl: './regions.component.html',
-  styleUrls: ['./regions.component.scss']
+  styleUrls: ['./regions.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegionsComponent implements OnInit {
 
@@ -16,24 +17,16 @@ export class RegionsComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  public title: string;
   public displayedColumns: string[] = ['id', 'name', 'iso2code', 'code'];
   public dataSource: any;
 
   constructor() { 
-    this.title = 'Listado REGIONES';
+    console.log("Regions List Component");
   }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.regions);
     this.dataSource.sort = this.sort;
-
-    console.log("regions: ",this.regions);
-    
-  }
-
-  regionPage(row: Region): void {
-    console.log("row: ",row);
     
   }
 

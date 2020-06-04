@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { filter } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-import { Information } from '@p-final/shared/data';
+import { InformationCountries, Country } from '@p-final/shared/data';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +11,11 @@ import { Information } from '@p-final/shared/data';
 export class HttpQueriesService {
   constructor(private http: HttpClient) {}
 
-  get(url: string): Observable<Information> {
-    return this.http.get<Information>(url).pipe(
-      filter(response => response[1])
+  get(url: string): Observable<Country[]> {
+    return this.http.get<InformationCountries>(url).pipe(
+      map((response: InformationCountries) => {
+        return response[1];
+      })
     );
   }
 }

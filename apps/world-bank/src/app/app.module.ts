@@ -20,14 +20,14 @@ import { UiModule } from '@p-final/shared/ui';
             import('./components/home/home.module').then((m) => m.HomeModule),
         },
         {
-          path: 'region:code',
+          path: 'region/:code',
           loadChildren: () =>
             import('./components/region/region.module').then(
               (m) => m.RegionModule
             ),
         },
         {
-          path: 'country:id',
+          path: 'country/:id',
           loadChildren: () =>
             import('./components/country/country.module').then(
               (m) => m.CountryModule

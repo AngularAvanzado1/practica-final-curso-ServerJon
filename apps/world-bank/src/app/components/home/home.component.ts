@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { Region } from '@p-final/shared/data';
 
@@ -9,12 +9,14 @@ import { HomeService } from '../../services/home.service';
   selector: 'p-final-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  public displayedColumns: string[] = ['id', 'code', 'iso2code', 'name'];
   public regions$: Observable<Region[]>;
 
-  constructor(private homeService: HomeService) {}
+  constructor(private homeService: HomeService) {
+    console.log("Home Component");
+  }
 
   ngOnInit(): void {
     this.getInfo();
