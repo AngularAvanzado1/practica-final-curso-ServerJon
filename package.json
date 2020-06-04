@@ -9,6 +9,7 @@
     "start:worldBank": "ng serve world-bank --port=4201 -o",
     "build": "ng build",
     "build:worldBank": "ng build world-bank --prod",
+    "start:pwa": "npm run build:worldBank && angular-http-server --open -p 8080 --path ./dist/apps/world-bank",
     "test": "ng test",
     "test:worldBank": "ng test worldBank",
     "lint": "nx workspace-lint && ng lint",
