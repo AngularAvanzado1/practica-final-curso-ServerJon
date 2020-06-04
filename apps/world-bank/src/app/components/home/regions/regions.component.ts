@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 import { Region } from '@p-final/shared/data';
 
@@ -14,6 +14,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class RegionsComponent implements OnInit {
 
   @Input() public regions: Region[];
+  @Output() public gone = new EventEmitter<Region>();
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -28,6 +29,10 @@ export class RegionsComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.regions);
     this.dataSource.sort = this.sort;
     
+  }
+
+  goToRegion(code: Region): void {
+    this.gone.emit(code);
   }
 
 }
