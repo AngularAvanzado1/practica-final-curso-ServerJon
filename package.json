@@ -32,7 +32,12 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "i18n:worldBank": "ng xi18n world-bank --output-path src/locale"
+    "i18n:worldBank": "ng xi18n world-bank --output-path src/locale",
+    "dev:ssr": "ng run world-bank:serve-ssr",
+    "serve:ssr": "node dist/world-bank/server/main.js",
+    "build:ssr": "ng build --prod && ng run world-bank:server:production",
+    "prerender": "ng run world-bank:prerender",
+    "start:ssr": "npm run build:ssr && npm run serve:ssr"
   },
   "private": true,
   "dependencies": {
@@ -45,16 +50,21 @@
     "@angular/material": "^9.2.4",
     "@angular/platform-browser": "^9.1.9",
     "@angular/platform-browser-dynamic": "^9.1.9",
+    "@angular/platform-server": "^9.1.9",
     "@angular/router": "^9.1.9",
     "@angular/service-worker": "^9.1.9",
+    "@nguniversal/express-engine": "^9.1.1",
     "@nrwl/schematics": "^8.12.11",
     "core-js": "^2.5.4",
+    "express": "^4.15.2",
     "rxjs": "~6.5.5",
     "zone.js": "^0.10.3"
   },
   "devDependencies": {
     "@angular/cli": "9.1.7",
+    "@nguniversal/builders": "^9.1.1",
     "@nrwl/workspace": "9.3.0",
+    "@types/express": "^4.17.0",
     "@types/node": "~8.9.4",
     "dotenv": "6.2.0",
     "ts-node": "~7.0.0",
