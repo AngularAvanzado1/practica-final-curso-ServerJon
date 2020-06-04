@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 import { RegionRoutingModule } from './region-routing.module';
 import { RegionComponent } from './region.component';
@@ -21,6 +22,7 @@ const routes: Routes = [{ path: '', component: RegionComponent }];
     MatSortModule,
     MatTableModule,
     MatButtonModule,
+    MatCardModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

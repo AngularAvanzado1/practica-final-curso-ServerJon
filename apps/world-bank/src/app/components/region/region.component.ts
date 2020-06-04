@@ -1,9 +1,9 @@
+import { RegionService } from './../../services/region.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
-import { Country } from '@p-final/shared/data';
+import { Country, Region } from '@p-final/shared/data';
 import { HttpQueriesService } from '@p-final/shared/data';
 
 @Component({
@@ -15,10 +15,12 @@ import { HttpQueriesService } from '@p-final/shared/data';
 export class RegionComponent implements OnInit {
   public countries$: Observable<Country[]>;
   public codeRegion: string;
+  public region: Region;
 
   constructor(
     private httpQueriesService: HttpQueriesService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private regionService: RegionService
   ) {
     console.log('Region Component');
 
@@ -28,6 +30,9 @@ export class RegionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.loadRegion();
+
     this.loadCountries();
   }
 
@@ -35,8 +40,13 @@ export class RegionComponent implements OnInit {
     this.countries$ = this.httpQueriesService.get(
       `http://api.worldbank.org/v2/region/${this.codeRegion}/country?per_page=1000&format=json`
     );
+  }
 
-    console.log("countries: ",this.countries$);
-    
+  loadRegion(): void {
+    this.regionService.region$.subscribe({
+      next: region => {
+        this.region = region;
+      }
+    })
   }
 }

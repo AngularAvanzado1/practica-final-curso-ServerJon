@@ -18,7 +18,7 @@ export class HomeService {
         let filteredArray = new Array;
 
         response[1].forEach((region) => {
-          if (region.id.length > 0) {
+          if (this.is_numeric(region.id)) {
             filteredArray.push(region);
           }
         });
@@ -26,5 +26,9 @@ export class HomeService {
         return filteredArray;
       })
     );
+  }
+
+  private is_numeric(value: string): boolean {
+    return /^\d+$/.test(value);
   }
 }
