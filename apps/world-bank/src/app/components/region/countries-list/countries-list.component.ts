@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { Country, Region } from '@p-final/shared/data';
 
 import {MatSort} from '@angular/material/sort';

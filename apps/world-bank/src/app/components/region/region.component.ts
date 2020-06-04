@@ -1,9 +1,10 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Country } from '@p-final/shared/data';
-
-import { HttpQueriesService } from '@p-final/shared/data';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { Country } from '@p-final/shared/data';
+import { HttpQueriesService } from '@p-final/shared/data';
 
 @Component({
   selector: 'p-final-region',
@@ -34,5 +35,8 @@ export class RegionComponent implements OnInit {
     this.countries$ = this.httpQueriesService.get(
       `http://api.worldbank.org/v2/region/${this.codeRegion}/country?per_page=1000&format=json`
     );
+
+    console.log("countries: ",this.countries$);
+    
   }
 }

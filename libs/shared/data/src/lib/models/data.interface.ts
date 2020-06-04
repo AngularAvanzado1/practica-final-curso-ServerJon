@@ -18,8 +18,9 @@ export interface Informationpage {
 export interface Region {
     id:          string;
     code?:       string;
-    iso2Code:    string;
+    iso2code:    string;
     name:        string;
+    value?:      string;
 }
 
 export interface Country extends Region {
