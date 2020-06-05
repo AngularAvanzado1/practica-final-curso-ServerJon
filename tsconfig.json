@@ -17,10 +17,14 @@
     "baseUrl": ".",
     "paths": {
       "@p-final/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@p-final/shared/data": ["libs/shared/data/src/index.ts"]
+      "@p-final/shared/data": ["libs/shared/data/src/index.ts"],
+      "@p-final/shared/web-components": [
+        "libs/shared/web-components/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"],
   "angularCompilerOptions": {
-    "enableIvy": false }
+    "enableIvy": false
+  }
 }

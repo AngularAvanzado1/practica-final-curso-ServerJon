@@ -10,6 +10,8 @@ import { CountryRoutingModule } from './country-routing.module';
 import { CountryComponent } from './country.component';
 import { InfoCountryComponent } from './info-country/info-country.component';
 
+import { WebComponentsModule } from '@p-final/shared/web-components';
+
 const routes: Routes = [{ path: '', component: CountryComponent }];
 
 @NgModule({
@@ -20,7 +22,8 @@ const routes: Routes = [{ path: '', component: CountryComponent }];
     RouterModule.forChild(routes),
     MatCardModule,
     MatTabsModule,
-    MatButtonModule
+    MatButtonModule,
+    WebComponentsModule
   ],
 })
 export class CountryModule {}

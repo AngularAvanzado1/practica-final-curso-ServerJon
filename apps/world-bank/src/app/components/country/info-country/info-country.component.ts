@@ -11,7 +11,9 @@ export class InfoCountryComponent implements OnInit {
 
   @Input() public country: Country;
 
-  constructor() { }
+  constructor() { 
+    console.log("Info Country Component");
+  }
 
   ngOnInit(): void {
   }
