@@ -17,7 +17,7 @@
     "test:worldBank": "ng test world-bank --watch --verbose",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
-    "e2e:worldBank": "ng e2e world-bank",
+    "e2e:worldBank": "ng e2e world-bank-e2e --watch",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
