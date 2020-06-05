@@ -1,0 +1,54 @@
+<p-final-table-template>
+  <header>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ region.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><span i18n>Code: </span>{{ region.code }}</p>
+        <p><span>Iso2code: </span>{{ region.iso2code }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <h2 i18n>COUNTRIES List</h2>
+  </header>
+  <main>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef i18n> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="capitalCity">
+        <mat-header-cell *matHeaderCellDef i18n> Capital City </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.capitalCity }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="longitude">
+        <mat-header-cell *matHeaderCellDef i18n> Longitude </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.longitude }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="latitude">
+        <mat-header-cell *matHeaderCellDef i18n> Latitude </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.latitude }} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        routerLink="/country/{{ row.id }}"
+      ></mat-row>
+    </mat-table>
+  </main>
+  <footer style="padding: 10px;">
+    <button mat-raised-button color="primary" routerLink="/home" i18n>Back</button>
+  </footer>
+</p-final-table-template>

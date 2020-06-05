@@ -1,0 +1,46 @@
+{
+  "npmScope": "practica-final-curso-server-jon",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "world-bank": {
+      "tags": []
+    },
+    "world-bank-e2e": {
+      "tags": [],
+      "implicitDependencies": ["world-bank"]
+    },
+    "shared-ui": {
+      "tags": []
+    },
+    "shared-data": {
+      "tags": []
+    },
+    "shared-web-components": {
+      "tags": []
+    },
+    "external-wbde-country": {
+      "tags": []
+    },
+    "external-wbde-country-e2e": {
+      "tags": [],
+      "implicitDependencies": ["external-wbde-country"]
+    }
+  }
+}
