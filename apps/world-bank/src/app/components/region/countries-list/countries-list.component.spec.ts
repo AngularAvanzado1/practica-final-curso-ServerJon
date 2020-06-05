@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { CountriesListComponent } from './countries-list.component';
+
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 describe('CountriesListComponent', () => {
   let component: CountriesListComponent;
@@ -8,9 +15,16 @@ describe('CountriesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountriesListComponent ]
-    })
-    .compileComponents();
+      declarations: [CountriesListComponent],
+      imports: [
+        MatTableModule,
+        MatSortModule,
+        MatButtonModule,
+        MatCardModule,
+        HttpClientTestingModule,
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

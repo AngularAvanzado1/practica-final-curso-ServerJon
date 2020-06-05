@@ -14,7 +14,7 @@
     "build:worldBank-es": "ng build world-bank --configuration=production-es",
     "build:external-country": "ng build --prod --single-bundle --project external-wbde-country",
     "test": "ng test",
-    "test:worldBank": "ng test world-bank",
+    "test:worldBank": "ng test world-bank --watch --verbose",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
     "e2e:worldBank": "ng e2e world-bank",
