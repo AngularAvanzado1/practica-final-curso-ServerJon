@@ -1,6 +1,12 @@
+import { Region } from '@p-final/shared/data';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+
 import { RegionsComponent } from './regions.component';
+
+import { UiModule } from '@p-final/shared/ui';
 
 describe('RegionsComponent', () => {
   let component: RegionsComponent;
@@ -8,7 +14,8 @@ describe('RegionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegionsComponent ]
+      declarations: [ RegionsComponent ],
+      imports: [MatTableModule, MatSortModule, UiModule]
     })
     .compileComponents();
   }));

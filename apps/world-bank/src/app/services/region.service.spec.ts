@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { RegionService } from './region.service';
+import { Observable } from 'rxjs';
 
 describe('RegionService', () => {
   let service: RegionService;
