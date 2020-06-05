@@ -1,3 +1,13 @@
-<section *ngIf="countries$ | async as countries">
-  <p-final-info-country *ngFor="let country of countries" [country]="country"></p-final-info-country>
-</section>
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Info Country" i18n>
+    <section *ngIf="countries$ | async as countries">
+        <p-final-info-country
+          *ngFor="let country of countries"
+          [country]="country"
+        ></p-final-info-country>
+      </section>
+  </mat-tab>
+  <mat-tab label="Web Component" i18n>
+      <wbde-country [id]="codeCountry"></wbde-country>
+  </mat-tab>
+</mat-tab-group>

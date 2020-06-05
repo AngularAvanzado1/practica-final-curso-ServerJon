@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -20,6 +19,8 @@ export class CountryComponent implements OnInit {
     private httpQueriesService: HttpQueriesService,
     private activatedRoute: ActivatedRoute
   ) {
+    console.log("Country Component");    
+
     activatedRoute.paramMap.subscribe((params) => {
       this.codeCountry = params.get('id');
     });
